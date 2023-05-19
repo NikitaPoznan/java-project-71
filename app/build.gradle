@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'application'
+    id 'checkstyle'
+    id 'jacoco'
 }
 
 group 'hexlet.code'
@@ -28,4 +30,18 @@ test {
 
 compileJava {
     options.release = 17
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
+checkstyle {
+    toolVersion '9.2.1'
 }
