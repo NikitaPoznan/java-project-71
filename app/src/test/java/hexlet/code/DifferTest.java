@@ -20,10 +20,11 @@ class DifferTest {
             """;
     @Test
     void generate() throws Exception {
-        String filePath1 = getPath("resources/file1.json").toString();
-        String filePath2 =getPath("resources/file2.json").toString();
-    Differ.generate(filePath1, filePath2, "stylish"); // требуется сохранить результат в переменную(из generate)
+        String filePath1 = getPath("src/test/resources/file1.json").toString();
+        String filePath2 =getPath("src/test/resources/file2.json").toString();
+    String result = Differ.generate(filePath1, filePath2, "stylish"); // требуется сохранить результат в переменную(из generate)
         // нужно взять ожидаемый результат, что было в примере, нужно создать, провести сравнение при помощи assertion
+        assertEquals(result, EXPECTED_STYLISH);
     }
 
 

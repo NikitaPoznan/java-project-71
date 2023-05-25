@@ -6,7 +6,7 @@ public class Differ {
     public static String generate(String firstFilePath, String secondFilePath, String format) throws Exception {
         var rawFileContent1 = readFile(firstFilePath);
         var fileContent1 = Parse.parseJson(rawFileContent1);
-        var rawFileContent2 = readFile(firstFilePath);
+        var rawFileContent2 = readFile(secondFilePath);
         var fileContent2 = Parse.parseJson(rawFileContent2);
         var differ = Comparator.compare(fileContent1, fileContent2);
         //последним шагом нужно результат компаратора передать в формат. И в самом конце вызывать класс форматтер.
