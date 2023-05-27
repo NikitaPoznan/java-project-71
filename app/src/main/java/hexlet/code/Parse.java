@@ -13,4 +13,10 @@ public class Parse {
         Map<String,Object> result = objectMapper.readValue(content, new TypeReference <Map<String,Object>>(){});
         return result;
     }
+    public static Map<String,Object> parseYML(String content) throws JsonProcessingException {
+        ObjectMapper mapper = new YAMLMapper();
+
+        Map<String,Object> result = mapper.readValue(content, new TypeReference <Map<String,Object>>(){});
+        return result;
+    }
 }

@@ -27,7 +27,7 @@ class DifferTest {
         assertEquals(result, EXPECTED_STYLISH);
     }
 
-
+// для yml требуется созадть отдельный метод с путём и там указать относительный пусть
     public static Path getPath(String fileName){
         return Paths.get(fileName).toAbsolutePath().normalize();
     }
