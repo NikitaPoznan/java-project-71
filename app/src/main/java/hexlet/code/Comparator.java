@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -25,14 +26,14 @@ public class Comparator {
                 keyDiff.put("Status", "Removed");
                 keyDiff.put("OldValue", file1.get(key));
             } else if (!file1.containsKey(key)) {
-                keyDiff.put("Status", "ADDED");
+                keyDiff.put("Status", "Added");
                 keyDiff.put("NewValue", file2.get(key));
 
-            } else if (file1.get(key).equals(file2.get(key))) {
+            } else if (Objects.equals(file1.get(key), file2.get(key))) {
                 keyDiff.put("Status", "Same");
                 keyDiff.put("OldValue", file1.get(key));
-            }else{
-                keyDiff.put("Status", "UPDATE");
+            } else {
+                keyDiff.put("Status", "Update");
                 keyDiff.put("NewValue", file2.get(key));
                 keyDiff.put("OldValue", file1.get(key));
             }
