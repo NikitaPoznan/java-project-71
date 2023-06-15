@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Formatter {
 
-    public static String BaseFormatter(List<Map<String, Object>> result, String format) throws JsonProcessingException {
+    public static String baseFormatter(List<Map<String, Object>> result, String format) throws JsonProcessingException {
 
 
         return switch (format) {

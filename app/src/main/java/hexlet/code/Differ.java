@@ -22,7 +22,7 @@ public class Differ {
 
         var differ = Comparator.compare(fileContent1, fileContent2);
 
-        return Formatter.BaseFormatter(differ, format);
+        return Formatter.baseFormatter(differ, format);
     }
 
 
