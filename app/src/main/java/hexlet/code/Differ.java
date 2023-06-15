@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Formatter;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -13,12 +15,14 @@ public class Differ {
         var rawFileContent1 = readFile(firstFilePath);
         var fileExtension1 = getExtension(firstFilePath);
         var fileContent1 = Parser.parse(rawFileContent1, fileExtension1);
+
         var rawFileContent2 = readFile(secondFilePath);
         var fileExtension2 = getExtension(secondFilePath);
         var fileContent2 = Parser.parse(rawFileContent2, fileExtension2);
+
         var differ = Comparator.compare(fileContent1, fileContent2);
 
-        return Formatter.format(differ, format);
+        return Formatter.BaseFormatter(differ, format);
     }
 
 
@@ -30,7 +34,7 @@ public class Differ {
     }
 
     public static String getExtension(String filePath) {
-        var path = filePath.split("\\.");  // экранирование символов
+        var path = filePath.split("\\.");
         return path[path.length - 1];
     }
 }

@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.formatters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Formatter {
 
-    public static String format(List<Map<String, Object>> result, String format) throws JsonProcessingException {
+    public static String BaseFormatter(List<Map<String, Object>> result, String format) throws JsonProcessingException {
 
 
         return switch (format) {

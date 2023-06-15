@@ -27,7 +27,7 @@ class DifferTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"json", "yaml"})
-    void generateDefaultFromJson() throws Exception {
+    void generateDefault() throws Exception {
         String filePath1 = getPath("src/test/resources/file1.json").toString();
         String filePath2 = getPath("src/test/resources/file2.json").toString();
         String result = Differ.generate(filePath1, filePath2);

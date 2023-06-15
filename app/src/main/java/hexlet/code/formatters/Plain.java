@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.formatters;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -21,7 +21,7 @@ public class Plain {
                                 .append(formatValue(diff.get("OldValue"))).append(" to ")
                                 .append(formatValue(diff.get("NewValue"))).append("\n");
                 case ("Same") -> {
-                }   // add From
+                }
                 default -> throw new RuntimeException("unknown status: " + diff.get("Status"));
 
 
